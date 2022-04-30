@@ -1,16 +1,20 @@
 import React from 'react'
 
-import { Element, useEditor } from '@craftjs/core'
-
 import { Box, Typography, Grid, Button as MaterialButton } from '@mui/material'
 
+import { useEditor, Element } from '@craftjs/core'
+
+import Button from 'Components/Editor/Button/Button'
 import Card from 'Components/Editor/Card/Card'
 import Container from 'Components/Editor/Container/Container'
 import Text from 'Components/Editor/Text/Text'
-import Button from 'Components/Editor/Button/Button'
 
 const Toolbox = () => {
-	const { connectors } = useEditor()
+	const { connectors } = useEditor(state => {
+		return {
+			connectors: state.connectors,
+		}
+	})
 
 	return (
 		<Box px={2} py={2}>
@@ -18,7 +22,7 @@ const Toolbox = () => {
 				container
 				direction='column'
 				alignItems='center'
-				justifyContent='center'
+				justify='center'
 				spacing={1}
 			>
 				<Box pb={2}>
@@ -33,6 +37,7 @@ const Toolbox = () => {
 							)
 						}
 						variant='contained'
+						data-cy='toolbox-button'
 					>
 						Button
 					</MaterialButton>
@@ -43,6 +48,7 @@ const Toolbox = () => {
 							connectors.create(ref, <Text text='Hi world' />)
 						}
 						variant='contained'
+						data-cy='toolbox-text'
 					>
 						Text
 					</MaterialButton>
@@ -52,10 +58,11 @@ const Toolbox = () => {
 						ref={ref =>
 							connectors.create(
 								ref,
-								<Element is={Container} padding={20} canvas />
+								<Element canvas is={Container} padding={20} />
 							)
 						}
 						variant='contained'
+						data-cy='toolbox-container'
 					>
 						Container
 					</MaterialButton>
@@ -64,6 +71,7 @@ const Toolbox = () => {
 					<MaterialButton
 						ref={ref => connectors.create(ref, <Card />)}
 						variant='contained'
+						data-cy='toolbox-card'
 					>
 						Card
 					</MaterialButton>
