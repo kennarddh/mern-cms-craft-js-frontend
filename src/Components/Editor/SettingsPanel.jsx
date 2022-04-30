@@ -29,8 +29,6 @@ export const SettingsPanel = () => {
 		return { selected }
 	})
 
-	console.log(selected)
-
 	return selected ? (
 		<Box bgcolor='rgba(0, 0, 0, 0.06)' mt={2} px={2} py={2}>
 			<Grid container direction='column' spacing={0}>

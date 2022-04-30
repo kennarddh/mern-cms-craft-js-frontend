@@ -101,11 +101,6 @@ const ButtonSettings = () => {
 					}
 				>
 					<FormControlLabel
-						label='Default'
-						value='default'
-						control={<Radio size='small' color='primary' />}
-					/>
-					<FormControlLabel
 						label='Primary'
 						value='primary'
 						control={<Radio size='small' color='primary' />}
@@ -123,11 +118,9 @@ const ButtonSettings = () => {
 
 Button.craft = {
 	props: {
-		size: {
-			size: 'small',
-			variant: 'text',
-			color: 'primary',
-		},
+		size: 'small',
+		variant: 'text',
+		color: 'primary',
 	},
 	related: {
 		settings: ButtonSettings,
