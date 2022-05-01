@@ -56,7 +56,11 @@ export default function App() {
 								data-cy='root-container'
 							>
 								<Card data-cy='frame-card' />
-								<Button size='small' text='Click me' />
+								<Button
+									size='small'
+									variant='contained'
+									text='Click me'
+								/>
 								<Text
 									fontSize={20}
 									text='Hi world!'

@@ -9,6 +9,7 @@ export const CardTop = ({ children }) => {
 	const {
 		connectors: { connect },
 	} = useNode()
+
 	return (
 		<div ref={connect} className='text-only'>
 			{children}
@@ -30,6 +31,7 @@ export const CardBottom = ({ children }) => {
 	const {
 		connectors: { connect },
 	} = useNode()
+
 	return <div ref={connect}>{children}</div>
 }
 
@@ -51,7 +53,7 @@ const Card = ({ background, padding = 20 }) => {
 				<Text text='Subtitle' fontSize={15} />
 			</Element>
 			<Element id='buttons' is={CardBottom} canvas>
-				<Button size='small' text='Learn more' />
+				<Button size='small' text='Learn more' variant='contained' />
 			</Element>
 		</Container>
 	)
