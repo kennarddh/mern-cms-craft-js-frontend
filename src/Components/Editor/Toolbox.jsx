@@ -33,7 +33,11 @@ const Toolbox = () => {
 						ref={ref =>
 							connectors.create(
 								ref,
-								<Button text='Click me' size='small' />
+								<Button
+									text='Click me'
+									variant='contained'
+									size='small'
+								/>
 							)
 						}
 						variant='contained'

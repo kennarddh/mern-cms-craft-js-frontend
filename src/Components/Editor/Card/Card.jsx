@@ -51,7 +51,7 @@ const Card = ({ background, padding = 20 }) => {
 				<Text text='Subtitle' fontSize={15} />
 			</Element>
 			<Element id='buttons' is={CardBottom} canvas>
-				<Button size='small'>Learn more</Button>
+				<Button size='small' text='Learn more' />
 			</Element>
 		</Container>
 	)
