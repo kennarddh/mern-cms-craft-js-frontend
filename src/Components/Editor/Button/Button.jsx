@@ -21,6 +21,7 @@ const Button = ({ size, variant, color, text }) => {
 			size={size}
 			variant={variant}
 			color={color}
+			style={{ textTransform: 'none' }}
 		>
 			{text}
 		</MaterialButton>
