@@ -1,49 +1,12 @@
 import React from 'react'
 import Text from 'Components/Editor/Text/Text'
 import Button from 'Components/Editor/Button/Button'
-import { Element, useNode } from '@craftjs/core'
+import { Element } from '@craftjs/core'
 
 import Container from 'Components/Editor/Container/Container'
 
-export const CardTop = ({ children }) => {
-	const {
-		connectors: { connect },
-	} = useNode()
-
-	return (
-		<div ref={connect} className='text-only'>
-			{children}
-		</div>
-	)
-}
-
-CardTop.craft = {
-	rules: {
-		// Only accept Text
-		canMoveIn: incomingNodes =>
-			incomingNodes.every(
-				incomingNode => incomingNode.data.type === Text
-			),
-	},
-}
-
-export const CardBottom = ({ children }) => {
-	const {
-		connectors: { connect },
-	} = useNode()
-
-	return <div ref={connect}>{children}</div>
-}
-
-CardBottom.craft = {
-	rules: {
-		// Only accept Buttons
-		canMoveIn: incomingNodes =>
-			incomingNodes.every(
-				incomingNode => incomingNode.data.type === Button
-			),
-	},
-}
+import CardTop from './CardTop'
+import CardBottom from './CardBottom'
 
 const Card = ({ background, padding = 20 }) => {
 	return (
@@ -60,3 +23,5 @@ const Card = ({ background, padding = 20 }) => {
 }
 
 export default Card
+
+export { CardTop, CardBottom }
