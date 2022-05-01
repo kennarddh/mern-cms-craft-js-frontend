@@ -14,9 +14,15 @@ import {
 const Settings = () => {
 	const {
 		actions: { setProp },
-		props,
+		text,
+		variant,
+		size,
+		color,
 	} = useNode(node => ({
-		props: node.data.props,
+		text: node.data.props.text,
+		variant: node.data.props.variant,
+		size: node.data.props.size,
+		color: node.data.props.color,
 	}))
 
 	return (
@@ -25,9 +31,8 @@ const Settings = () => {
 				<FormLabel component='legend'>Text</FormLabel>
 				<TextField
 					id='standard-basic'
-					label='Standard'
 					variant='standard'
-					value={props.text}
+					defaultValue={text}
 					onChange={event =>
 						setProp(props => (props.text = event.target.value))
 					}
@@ -36,9 +41,9 @@ const Settings = () => {
 			<FormControl size='small' component='fieldset'>
 				<FormLabel component='legend'>Size</FormLabel>
 				<RadioGroup
-					value={props.size}
-					onChange={event =>
-						setProp(props => (props.size = event.target.value))
+					defaultValue={size}
+					onChange={(_, value) =>
+						setProp(props => (props.size = value))
 					}
 				>
 					<FormControlLabel
@@ -61,9 +66,9 @@ const Settings = () => {
 			<FormControl component='fieldset'>
 				<FormLabel component='legend'>Variant</FormLabel>
 				<RadioGroup
-					value={props.variant}
-					onChange={event =>
-						setProp(props => (props.variant = event.target.value))
+					defaultValue={variant}
+					onChange={(_, value) =>
+						setProp(props => (props.variant = value))
 					}
 				>
 					<FormControlLabel
@@ -86,9 +91,9 @@ const Settings = () => {
 			<FormControl component='fieldset'>
 				<FormLabel component='legend'>Color</FormLabel>
 				<RadioGroup
-					value={props.color}
-					onChange={event =>
-						setProp(props => (props.color = event.target.value))
+					defaultValue={color}
+					onChange={(_, value) =>
+						setProp(props => (props.color = value))
 					}
 				>
 					<FormControlLabel
