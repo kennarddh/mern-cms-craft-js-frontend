@@ -8,6 +8,7 @@ import {
 	RadioGroup,
 	Radio,
 	FormLabel,
+	TextField,
 } from '@mui/material'
 
 const Settings = () => {
@@ -21,11 +22,23 @@ const Settings = () => {
 	return (
 		<div>
 			<FormControl size='small' component='fieldset'>
+				<FormLabel component='legend'>Text</FormLabel>
+				<TextField
+					id='standard-basic'
+					label='Standard'
+					variant='standard'
+					value={props.text}
+					onChange={event =>
+						setProp(props => (props.text = event.target.value))
+					}
+				/>
+			</FormControl>
+			<FormControl size='small' component='fieldset'>
 				<FormLabel component='legend'>Size</FormLabel>
 				<RadioGroup
 					value={props.size}
-					onChange={e =>
-						setProp(props => (props.size = e.target.value))
+					onChange={event =>
+						setProp(props => (props.size = event.target.value))
 					}
 				>
 					<FormControlLabel
@@ -49,8 +62,8 @@ const Settings = () => {
 				<FormLabel component='legend'>Variant</FormLabel>
 				<RadioGroup
 					value={props.variant}
-					onChange={e =>
-						setProp(props => (props.variant = e.target.value))
+					onChange={event =>
+						setProp(props => (props.variant = event.target.value))
 					}
 				>
 					<FormControlLabel
@@ -74,8 +87,8 @@ const Settings = () => {
 				<FormLabel component='legend'>Color</FormLabel>
 				<RadioGroup
 					value={props.color}
-					onChange={e =>
-						setProp(props => (props.color = e.target.value))
+					onChange={event =>
+						setProp(props => (props.color = event.target.value))
 					}
 				>
 					<FormControlLabel
