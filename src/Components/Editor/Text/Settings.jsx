@@ -21,7 +21,7 @@ const Settings = () => {
 				<TextField
 					id='standard-basic'
 					variant='standard'
-					value={text}
+					defaultValue={text}
 					onChange={event =>
 						setProp(props => (props.text = event.target.value))
 					}
@@ -31,7 +31,7 @@ const Settings = () => {
 				<FormLabel component='legend'>Font size</FormLabel>
 				<Slider
 					color='primary'
-					value={fontSize || 7}
+					defaultValue={fontSize || 7}
 					step={1}
 					min={7}
 					max={50}
