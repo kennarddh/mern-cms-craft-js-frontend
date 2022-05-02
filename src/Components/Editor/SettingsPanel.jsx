@@ -11,8 +11,8 @@ import {
 import { useEditor } from '@craftjs/core'
 
 export const SettingsPanel = () => {
-	const { selected } = useEditor((state, query) => {
-		const [currentNodeId] = state.events.selected
+	const { actions, selected, isEnabled } = useEditor((state, query) => {
+		const currentNodeId = query.getEvent('selected').last()
 		let selected
 
 		if (currentNodeId) {
@@ -26,10 +26,13 @@ export const SettingsPanel = () => {
 			}
 		}
 
-		return { selected }
+		return {
+			selected,
+			isEnabled: state.options.enabled,
+		}
 	})
 
-	return selected ? (
+	return isEnabled && selected ? (
 		<Box bgcolor='rgba(0, 0, 0, 0.06)' mt={2} px={2} py={2}>
 			<Grid container direction='column' spacing={0}>
 				<Grid item>
@@ -51,7 +54,13 @@ export const SettingsPanel = () => {
 					</Box>
 				</Grid>
 				{selected.settings && <selected.settings />}
-				<MaterialButton variant='contained' color='primary'>
+				<MaterialButton
+					variant='contained'
+					color='primary'
+					onClick={() => {
+						actions.delete(selected.id)
+					}}
+				>
 					Delete
 				</MaterialButton>
 			</Grid>
