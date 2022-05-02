@@ -26,7 +26,7 @@
 		],
 		"import/prefer-default-export": "off",
 		"linebreak-style": ["error", "unix"],
-		"quotes": ["error", "single"],
+		"quotes": "off",
 		"semi": ["error", "never"],
 		"react/prop-types": "off",
 		"no-case-declarations": "off",
