@@ -7,26 +7,32 @@ const Nodes = {
 	Button: {
 		component: Button,
 		name: 'Button',
+		toolbox: true,
 	},
 	Card: {
 		component: Card,
 		name: 'Card',
+		toolbox: true,
 	},
 	CardTop: {
 		component: CardTop,
 		name: 'Card Top',
+		toolbox: false,
 	},
 	CardBottom: {
 		component: CardBottom,
 		name: 'Card Bottom',
+		toolbox: false,
 	},
 	Container: {
 		component: Container,
 		name: 'Container',
+		toolbox: true,
 	},
 	Text: {
 		component: Text,
 		name: 'Text',
+		toolbox: true,
 	},
 }
 
