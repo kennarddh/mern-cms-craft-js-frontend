@@ -14,7 +14,7 @@ import Card, {
 	CardBottom,
 } from 'Components/Editor/Components/Card/Card'
 import Text from 'Components/Editor/Components/Text/Text'
-import DefaultNode from 'Default/DefaultNode'
+import DefaultNode from 'Config/DefaultNode'
 
 const App = () => {
 	return (
