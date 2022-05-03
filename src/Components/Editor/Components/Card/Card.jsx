@@ -1,9 +1,9 @@
 import React from 'react'
-import Text from 'Components/Editor/Text/Text'
-import Button from 'Components/Editor/Button/Button'
+import Text from 'Components/Editor/Components/Text/Text'
+import Button from 'Components/Editor/Components/Button/Button'
 import { Element } from '@craftjs/core'
 
-import Container from 'Components/Editor/Container/Container'
+import Container from 'Components/Editor/Components/Container/Container'
 
 import CardTop from './CardTop'
 import CardBottom from './CardBottom'

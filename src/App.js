@@ -7,10 +7,13 @@ import { Editor, Frame } from '@craftjs/core'
 import Header from 'Components/Editor/Header'
 import Sidebar from 'Components/Sidebar'
 
-import Container from 'Components/Editor/Container/Container'
-import Button from 'Components/Editor/Button/Button'
-import Card, { CardTop, CardBottom } from 'Components/Editor/Card/Card'
-import Text from 'Components/Editor/Text/Text'
+import Container from 'Components/Editor/Components/Container/Container'
+import Button from 'Components/Editor/Components/Button/Button'
+import Card, {
+	CardTop,
+	CardBottom,
+} from 'Components/Editor/Components/Card/Card'
+import Text from 'Components/Editor/Components/Text/Text'
 import DefaultNode from 'Default/DefaultNode'
 
 const App = () => {

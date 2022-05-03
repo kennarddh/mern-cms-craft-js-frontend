@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'Components/Editor/Button/Button'
+import Button from 'Components/Editor/Components/Button/Button'
 import { useNode } from '@craftjs/core'
 
 const CardBottom = ({ children }) => {
