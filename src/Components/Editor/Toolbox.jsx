@@ -14,7 +14,7 @@ const Toolbox = () => {
 	})
 
 	return (
-		<Box px={2} py={2}>
+		<Box p={2}>
 			<Grid
 				container
 				direction='column'
