@@ -31,8 +31,9 @@ const Button = ({ size, variant, color, text }) => {
 Button.craft = {
 	props: {
 		size: 'small',
-		variant: 'text',
+		variant: 'contained',
 		color: 'primary',
+		text: 'Button',
 	},
 	related: {
 		settings: Settings,
