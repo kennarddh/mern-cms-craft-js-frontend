@@ -23,4 +23,10 @@ const Container = ({ background, padding = 0, children }) => {
 	)
 }
 
+Container.craft = {
+	props: {
+		padding: 20,
+	},
+}
+
 export default Container
