@@ -35,31 +35,28 @@ const Toolbox = () => {
 					{Object.keys(Nodes).map(key => {
 						const node = Nodes[key]
 
+						if (!node.toolbox) return null
+
 						return (
-							// eslint-disable-next-line
-							<>
-								{node.toolbox && (
-									<Grid
-										key={node.id}
-										container
-										direction='column'
-										xs={6}
-										item
-									>
-										<MaterialButton
-											ref={ref =>
-												connectors.create(
-													ref,
-													<node.component />
-												)
-											}
-											variant='contained'
-										>
-											{node.name}
-										</MaterialButton>
-									</Grid>
-								)}
-							</>
+							<Grid
+								key={node.id}
+								container
+								direction='column'
+								xs={6}
+								item
+							>
+								<MaterialButton
+									ref={ref =>
+										connectors.create(
+											ref,
+											<node.component />
+										)
+									}
+									variant='contained'
+								>
+									{node.name}
+								</MaterialButton>
+							</Grid>
 						)
 					})}
 				</Grid>
