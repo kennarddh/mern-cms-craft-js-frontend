@@ -28,57 +28,65 @@ const Toolbox = () => {
 				<Box pb={2}>
 					<Typography>Drag to add</Typography>
 				</Box>
-				<Grid container direction='column' item>
-					<MaterialButton
-						ref={ref =>
-							connectors.create(
-								ref,
-								<Button
-									text='Click me'
-									variant='contained'
-									size='small'
-								/>
-							)
-						}
-						variant='contained'
-						data-cy='toolbox-button'
-					>
-						Button
-					</MaterialButton>
-				</Grid>
-				<Grid container direction='column' item>
-					<MaterialButton
-						ref={ref =>
-							connectors.create(ref, <Text text='Hi world' />)
-						}
-						variant='contained'
-						data-cy='toolbox-text'
-					>
-						Text
-					</MaterialButton>
-				</Grid>
-				<Grid container direction='column' item>
-					<MaterialButton
-						ref={ref =>
-							connectors.create(
-								ref,
-								<Element canvas is={Container} padding={20} />
-							)
-						}
-						variant='contained'
-						data-cy='toolbox-container'
-					>
-						Container
-					</MaterialButton>
-				</Grid>
-				<Grid container direction='column' item>
-					<MaterialButton
-						ref={ref => connectors.create(ref, <Card />)}
-						variant='contained'
-						data-cy='toolbox-card'
-					>
-						Card
-					</MaterialButton>
+				<Grid
+					container
+					direction='row'
+					alignItems='center'
+					justify='center'
+					spacing={2}
+				>
+					<Grid container direction='column' xs={6} item>
+						<MaterialButton
+							ref={ref =>
+								connectors.create(
+									ref,
+									<Button
+										text='Click me'
+										variant='contained'
+										size='small'
+									/>
+								)
+							}
+							variant='contained'
+						>
+							Button
+						</MaterialButton>
+					</Grid>
+					<Grid container direction='column' xs={6} item>
+						<MaterialButton
+							ref={ref =>
+								connectors.create(ref, <Text text='Hi world' />)
+							}
+							variant='contained'
+						>
+							Text
+						</MaterialButton>
+					</Grid>
+					<Grid container direction='column' xs={6} item>
+						<MaterialButton
+							ref={ref =>
+								connectors.create(
+									ref,
+									<Element
+										canvas
+										is={Container}
+										padding={20}
+									/>
+								)
+							}
+							variant='contained'
+						>
+							Container
+						</MaterialButton>
+					</Grid>
+					<Grid container direction='column' xs={6} item>
+						<MaterialButton
+							ref={ref => connectors.create(ref, <Card />)}
+							variant='contained'
+						>
+							Card
+						</MaterialButton>
+					</Grid>
 				</Grid>
 			</Grid>
 		</Box>
