@@ -54,15 +54,17 @@ export const SettingsPanel = () => {
 					</Box>
 				</Grid>
 				{selected.settings && <selected.settings />}
-				<MaterialButton
-					variant='contained'
-					color='primary'
-					onClick={() => {
-						actions.delete(selected.id)
-					}}
-				>
-					Delete
-				</MaterialButton>
+				{selected.isDeletable && (
+					<MaterialButton
+						variant='contained'
+						color='primary'
+						onClick={() => {
+							actions.delete(selected.id)
+						}}
+					>
+						Delete
+					</MaterialButton>
+				)}
 			</Grid>
 		</Box>
 	) : null
