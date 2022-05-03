@@ -31,6 +31,7 @@ const Toolbox = () => {
 					alignItems='center'
 					justify='center'
 					spacing={2}
+					mr={-1}
 				>
 					{Object.keys(Nodes).map(key => {
 						const node = Nodes[key]
