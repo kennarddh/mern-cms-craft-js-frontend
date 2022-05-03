@@ -4,10 +4,10 @@ import { Box, Typography, Grid, Button as MaterialButton } from '@mui/material'
 
 import { useEditor, Element } from '@craftjs/core'
 
-import Button from 'Components/Editor/Components/Button/Button'
-import Card from 'Components/Editor/Components/Card/Card'
-import Container from 'Components/Editor/Components/Container/Container'
-import Text from 'Components/Editor/Components/Text/Text'
+import Button from 'Components/Editor/Nodes/Button/Button'
+import Card from 'Components/Editor/Nodes/Card/Card'
+import Container from 'Components/Editor/Nodes/Container/Container'
+import Text from 'Components/Editor/Nodes/Text/Text'
 
 const Toolbox = () => {
 	const { connectors } = useEditor(state => {

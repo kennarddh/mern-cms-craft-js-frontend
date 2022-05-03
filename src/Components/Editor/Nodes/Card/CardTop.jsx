@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from 'Components/Editor/Components/Text/Text'
+import Text from 'Components/Editor/Nodes/Text/Text'
 import { useNode } from '@craftjs/core'
 
 const CardTop = ({ children }) => {
