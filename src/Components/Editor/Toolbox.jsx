@@ -2,12 +2,9 @@ import React from 'react'
 
 import { Box, Typography, Grid, Button as MaterialButton } from '@mui/material'
 
-import { useEditor, Element } from '@craftjs/core'
+import { useEditor } from '@craftjs/core'
 
-import Button from 'Components/Editor/Nodes/Button/Button'
-import Card from 'Components/Editor/Nodes/Card/Card'
-import Container from 'Components/Editor/Nodes/Container/Container'
-import Text from 'Components/Editor/Nodes/Text/Text'
+import Nodes from 'Config/Nodes'
 
 const Toolbox = () => {
 	const { connectors } = useEditor(state => {
@@ -35,58 +32,36 @@ const Toolbox = () => {
 					justify='center'
 					spacing={2}
 				>
-					<Grid container direction='column' xs={6} item>
-						<MaterialButton
-							ref={ref =>
-								connectors.create(
-									ref,
-									<Button
-										text='Click me'
-										variant='contained'
-										size='small'
-									/>
-								)
-							}
-							variant='contained'
-						>
-							Button
-						</MaterialButton>
-					</Grid>
-					<Grid container direction='column' xs={6} item>
-						<MaterialButton
-							ref={ref =>
-								connectors.create(ref, <Text text='Hi world' />)
-							}
-							variant='contained'
-						>
-							Text
-						</MaterialButton>
-					</Grid>
-					<Grid container direction='column' xs={6} item>
-						<MaterialButton
-							ref={ref =>
-								connectors.create(
-									ref,
-									<Element
-										canvas
-										is={Container}
-										padding={20}
-									/>
-								)
-							}
-							variant='contained'
-						>
-							Container
-						</MaterialButton>
-					</Grid>
-					<Grid container direction='column' xs={6} item>
-						<MaterialButton
-							ref={ref => connectors.create(ref, <Card />)}
-							variant='contained'
-						>
-							Card
-						</MaterialButton>
-					</Grid>
+					{Object.keys(Nodes).map(key => {
+						const node = Nodes[key]
+
+						return (
+							// eslint-disable-next-line
+							<>
+								{node.toolbox && (
+									<Grid
+										key={node.id}
+										container
+										direction='column'
+										xs={6}
+										item
+									>
+										<MaterialButton
+											ref={ref =>
+												connectors.create(
+													ref,
+													<node.component />
+												)
+											}
+											variant='contained'
+										>
+											{node.name}
+										</MaterialButton>
+									</Grid>
+								)}
+							</>
+						)
+					})}
 				</Grid>
 			</Grid>
 		</Box>
