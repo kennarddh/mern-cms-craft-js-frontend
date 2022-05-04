@@ -4,6 +4,8 @@ import { useNode } from '@craftjs/core'
 
 import { Paper } from '@mui/material'
 
+import Settings from './Settings'
+
 const Container = ({ background, padding = 0, children }) => {
 	const {
 		connectors: { connect, drag },
@@ -26,6 +28,9 @@ const Container = ({ background, padding = 0, children }) => {
 Container.craft = {
 	props: {
 		padding: 20,
+	},
+	related: {
+		settings: Settings,
 	},
 }
 
