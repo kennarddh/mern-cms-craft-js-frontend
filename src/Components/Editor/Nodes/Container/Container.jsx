@@ -6,7 +6,15 @@ import { Paper } from '@mui/material'
 
 import Settings from './Settings'
 
-const Container = ({ background, padding = 0, children }) => {
+const Container = ({
+	background,
+	padding = 0,
+	marginTop,
+	marginRight,
+	marginBottom,
+	marginLeft,
+	children,
+}) => {
 	const {
 		connectors: { connect, drag },
 	} = useNode(state => {
@@ -18,7 +26,14 @@ const Container = ({ background, padding = 0, children }) => {
 	return (
 		<Paper
 			ref={ref => connect(drag(ref))}
-			style={{ margin: '5px 0', background, padding: `${padding}px` }}
+			style={{
+				marginTop: `${marginTop}px`,
+				marginRight: `${marginRight}px`,
+				marginBottom: `${marginBottom}px`,
+				marginLeft: `${marginLeft}px`,
+				background,
+				padding: `${padding}px`,
+			}}
 		>
 			{children}
 		</Paper>
@@ -28,6 +43,10 @@ const Container = ({ background, padding = 0, children }) => {
 Container.craft = {
 	props: {
 		padding: 20,
+		marginTop: 5,
+		marginRight: 0,
+		marginBottom: 5,
+		marginLeft: 0,
 	},
 	related: {
 		settings: Settings,
