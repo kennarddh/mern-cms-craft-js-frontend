@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useNode } from '@craftjs/core'
 
@@ -25,6 +25,22 @@ const Settings = () => {
 		color: node.data.props.color,
 	}))
 
+	const [VariantValue, SetVariantValue] = useState(variant)
+	const [SizeValue, SetSizeValue] = useState(size)
+	const [ColorValue, SetColorValue] = useState(color)
+
+	useEffect(() => {
+		setProp(props => (props.variant = VariantValue), 500)
+	}, [VariantValue])
+
+	useEffect(() => {
+		setProp(props => (props.size = SizeValue), 500)
+	}, [SizeValue])
+
+	useEffect(() => {
+		setProp(props => (props.color = ColorValue), 500)
+	}, [ColorValue])
+
 	return (
 		<div>
 			<FormControl size='small' component='fieldset'>
@@ -41,10 +57,8 @@ const Settings = () => {
 			<FormControl size='small' component='fieldset'>
 				<FormLabel component='legend'>Size</FormLabel>
 				<RadioGroup
-					defaultValue={size}
-					onChange={(_, value) =>
-						setProp(props => (props.size = value))
-					}
+					value={size}
+					onChange={(_, value) => SetSizeValue(value)}
 				>
 					<FormControlLabel
 						label='Small'
@@ -66,10 +80,8 @@ const Settings = () => {
 			<FormControl component='fieldset'>
 				<FormLabel component='legend'>Variant</FormLabel>
 				<RadioGroup
-					defaultValue={variant}
-					onChange={(_, value) =>
-						setProp(props => (props.variant = value))
-					}
+					value={variant}
+					onChange={(_, value) => SetVariantValue(value)}
 				>
 					<FormControlLabel
 						label='Text'
@@ -91,10 +103,8 @@ const Settings = () => {
 			<FormControl component='fieldset'>
 				<FormLabel component='legend'>Color</FormLabel>
 				<RadioGroup
-					defaultValue={color}
-					onChange={(_, value) =>
-						setProp(props => (props.color = value))
-					}
+					value={color}
+					onChange={(_, value) => SetColorValue(value)}
 				>
 					<FormControlLabel
 						label='Primary'
