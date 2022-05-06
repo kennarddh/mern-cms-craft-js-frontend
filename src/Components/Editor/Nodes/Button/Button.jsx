@@ -6,7 +6,16 @@ import { Button as MaterialButton } from '@mui/material'
 
 import Settings from './Settings'
 
-const Button = ({ size, variant, color, text }) => {
+const Button = ({
+	size,
+	variant,
+	color,
+	text,
+	marginTop,
+	marginRight,
+	marginBottom,
+	marginLeft,
+}) => {
 	const {
 		connectors: { connect, drag },
 	} = useNode(state => {
@@ -21,7 +30,13 @@ const Button = ({ size, variant, color, text }) => {
 			size={size}
 			variant={variant}
 			color={color}
-			style={{ textTransform: 'none' }}
+			sx={{
+				textTransform: 'none',
+				marginTop: `${marginTop}px`,
+				marginRight: `${marginRight}px`,
+				marginBottom: `${marginBottom}px`,
+				marginLeft: `${marginLeft}px`,
+			}}
 		>
 			{text}
 		</MaterialButton>
@@ -34,6 +49,10 @@ Button.craft = {
 		variant: 'contained',
 		color: 'primary',
 		text: 'Button',
+		marginTop: '0',
+		marginRight: '0',
+		marginBottom: '0',
+		marginLeft: '0',
 	},
 	related: {
 		settings: Settings,

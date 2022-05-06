@@ -9,6 +9,7 @@ import {
 	Radio,
 	FormLabel,
 	TextField,
+	Slider,
 } from '@mui/material'
 
 const Settings = () => {
@@ -18,16 +19,28 @@ const Settings = () => {
 		variant,
 		size,
 		color,
+		marginTop,
+		marginRight,
+		marginBottom,
+		marginLeft,
 	} = useNode(node => ({
 		text: node.data.props.text,
 		variant: node.data.props.variant,
 		size: node.data.props.size,
 		color: node.data.props.color,
+		marginTop: node.data.props.marginTop,
+		marginRight: node.data.props.marginRight,
+		marginBottom: node.data.props.marginBottom,
+		marginLeft: node.data.props.marginLeft,
 	}))
 
 	const [VariantValue, SetVariantValue] = useState(variant)
 	const [SizeValue, SetSizeValue] = useState(size)
 	const [ColorValue, SetColorValue] = useState(color)
+	const [MarginTopValue, SetMarginTopValue] = useState(marginTop)
+	const [MarginRightValue, SetMarginRightValue] = useState(marginRight)
+	const [MarginBottomValue, SetMarginBottomValue] = useState(marginBottom)
+	const [MarginLeftValue, SetMarginLeftValue] = useState(marginLeft)
 
 	useEffect(() => {
 		setProp(props => (props.variant = VariantValue), 500)
@@ -41,8 +54,24 @@ const Settings = () => {
 		setProp(props => (props.color = ColorValue), 500)
 	}, [ColorValue])
 
+	useEffect(() => {
+		setProp(props => (props.marginTop = MarginTopValue), 500)
+	}, [MarginTopValue])
+
+	useEffect(() => {
+		setProp(props => (props.marginRight = MarginRightValue), 500)
+	}, [MarginRightValue])
+
+	useEffect(() => {
+		setProp(props => (props.marginBottom = MarginBottomValue), 500)
+	}, [MarginBottomValue])
+
+	useEffect(() => {
+		setProp(props => (props.marginLeft = MarginLeftValue), 500)
+	}, [MarginLeftValue])
+
 	return (
-		<div>
+		<>
 			<FormControl size='small' component='fieldset'>
 				<FormLabel component='legend'>Text</FormLabel>
 				<TextField
@@ -118,7 +147,35 @@ const Settings = () => {
 					/>
 				</RadioGroup>
 			</FormControl>
-		</div>
+			<FormControl fullWidth={true} margin='normal' component='fieldset'>
+				<FormLabel component='legend'>Margin Top</FormLabel>
+				<Slider
+					value={MarginTopValue}
+					onChange={(_, value) => SetMarginTopValue(value)}
+				/>
+			</FormControl>
+			<FormControl fullWidth={true} margin='normal' component='fieldset'>
+				<FormLabel component='legend'>Margin Right</FormLabel>
+				<Slider
+					value={MarginRightValue}
+					onChange={(_, value) => SetMarginRightValue(value)}
+				/>
+			</FormControl>
+			<FormControl fullWidth={true} margin='normal' component='fieldset'>
+				<FormLabel component='legend'>Margin Bottom</FormLabel>
+				<Slider
+					value={MarginBottomValue}
+					onChange={(_, value) => SetMarginBottomValue(value)}
+				/>
+			</FormControl>
+			<FormControl fullWidth={true} margin='normal' component='fieldset'>
+				<FormLabel component='legend'>Margin Left</FormLabel>
+				<Slider
+					value={MarginLeftValue}
+					onChange={(_, value) => SetMarginLeftValue(value)}
+				/>
+			</FormControl>
+		</>
 	)
 }
 
