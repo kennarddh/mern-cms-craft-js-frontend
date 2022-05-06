@@ -15,6 +15,10 @@ const Button = ({
 	marginRight,
 	marginBottom,
 	marginLeft,
+	paddingTop,
+	paddingRight,
+	paddingBottom,
+	paddingLeft,
 }) => {
 	const {
 		connectors: { connect, drag },
@@ -36,6 +40,10 @@ const Button = ({
 				marginRight: `${marginRight}px`,
 				marginBottom: `${marginBottom}px`,
 				marginLeft: `${marginLeft}px`,
+				paddingTop: `${paddingTop}px`,
+				paddingRight: `${paddingRight}px`,
+				paddingBottom: `${paddingBottom}px`,
+				paddingLeft: `${paddingLeft}px`,
 			}}
 		>
 			{text}
@@ -53,6 +61,10 @@ Button.craft = {
 		marginRight: '0',
 		marginBottom: '0',
 		marginLeft: '0',
+		paddingTop: '5',
+		paddingRight: '5',
+		paddingBottom: '5',
+		paddingLeft: '5',
 	},
 	related: {
 		settings: Settings,
