@@ -1,5 +1,4 @@
 import Button from 'Components/Editor/Nodes/Button/Button'
-import Card, { CardTop, CardBottom } from 'Components/Editor/Nodes/Card/Card'
 import Container, {
 	InnerContainer,
 } from 'Components/Editor/Nodes/Container/Container'
@@ -11,24 +10,6 @@ const Nodes = {
 		component: Button,
 		name: 'Button',
 		toolbox: true,
-	},
-	Card: {
-		id: 'Card',
-		component: Card,
-		name: 'Card',
-		toolbox: true,
-	},
-	CardTop: {
-		id: 'CardTop',
-		component: CardTop,
-		name: 'Card Top',
-		toolbox: false,
-	},
-	CardBottom: {
-		id: 'CardBottom',
-		component: CardBottom,
-		name: 'Card Bottom',
-		toolbox: false,
 	},
 	Container: {
 		id: 'Container',
