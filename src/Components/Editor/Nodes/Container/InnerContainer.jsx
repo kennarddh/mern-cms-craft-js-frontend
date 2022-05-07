@@ -8,11 +8,14 @@ import Settings from './Settings'
 
 const InnerContainer = ({
 	background,
-	padding = 0,
 	marginTop,
 	marginRight,
 	marginBottom,
 	marginLeft,
+	paddingTop,
+	paddingRight,
+	paddingBottom,
+	paddingLeft,
 	children,
 }) => {
 	const {
@@ -27,12 +30,15 @@ const InnerContainer = ({
 		<Paper
 			ref={ref => connect(drag(ref))}
 			style={{
+				background,
 				marginTop: `${marginTop}px`,
 				marginRight: `${marginRight}px`,
 				marginBottom: `${marginBottom}px`,
 				marginLeft: `${marginLeft}px`,
-				background,
-				padding: `${padding}px`,
+				paddingTop: `${paddingTop}px`,
+				paddingRight: `${paddingRight}px`,
+				paddingBottom: `${paddingBottom}px`,
+				paddingLeft: `${paddingLeft}px`,
 			}}
 		>
 			{children}
@@ -42,7 +48,10 @@ const InnerContainer = ({
 
 InnerContainer.craft = {
 	props: {
-		padding: 20,
+		paddingTop: 20,
+		paddingRight: 20,
+		paddingBottom: 20,
+		paddingLeft: 20,
 		marginTop: 5,
 		marginRight: 0,
 		marginBottom: 5,

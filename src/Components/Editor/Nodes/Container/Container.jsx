@@ -20,16 +20,6 @@ const Container = () => {
 	)
 }
 
-Container.craft = {
-	props: {
-		padding: 20,
-		marginTop: 5,
-		marginRight: 0,
-		marginBottom: 5,
-		marginLeft: 0,
-	},
-}
-
 export default Container
 
 export { InnerContainer }
