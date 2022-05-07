@@ -1,20 +1,10 @@
 import React from 'react'
 
-import { useNode } from '@craftjs/core'
+import { useNode, Element } from '@craftjs/core'
 
-import { Paper } from '@mui/material'
+import InnerContainer from './InnerContainer'
 
-import Settings from './Settings'
-
-const Container = ({
-	background,
-	padding = 0,
-	marginTop,
-	marginRight,
-	marginBottom,
-	marginLeft,
-	children,
-}) => {
+const Container = () => {
 	const {
 		connectors: { connect, drag },
 	} = useNode(state => {
@@ -24,19 +14,9 @@ const Container = ({
 	})
 
 	return (
-		<Paper
-			ref={ref => connect(drag(ref))}
-			style={{
-				marginTop: `${marginTop}px`,
-				marginRight: `${marginRight}px`,
-				marginBottom: `${marginBottom}px`,
-				marginLeft: `${marginLeft}px`,
-				background,
-				padding: `${padding}px`,
-			}}
-		>
-			{children}
-		</Paper>
+		<div ref={ref => connect(drag(ref))}>
+			<Element id='InnerContainer' is={InnerContainer} canvas />
+		</div>
 	)
 }
 
@@ -48,9 +28,8 @@ Container.craft = {
 		marginBottom: 5,
 		marginLeft: 0,
 	},
-	related: {
-		settings: Settings,
-	},
 }
 
 export default Container
+
+export { InnerContainer }
