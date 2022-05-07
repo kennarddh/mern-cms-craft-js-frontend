@@ -9,7 +9,7 @@ import Sidebar from 'Components/Sidebar'
 
 import { Resolver } from 'Config/Nodes'
 
-import DefaultNode from 'Config/DefaultNode'
+import DefaultNode from 'Config/DefaultNodes'
 
 const App = () => {
 	return (
