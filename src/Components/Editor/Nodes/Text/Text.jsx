@@ -9,6 +9,7 @@ import Settings from './Settings'
 const Text = ({ text, fontSize, textAlign }) => {
 	const {
 		connectors: { connect, drag },
+		editable,
 	} = useNode(state => {
 		return {
 			editable: state.events.selected,
@@ -16,11 +17,15 @@ const Text = ({ text, fontSize, textAlign }) => {
 	})
 
 	return (
-		<div ref={ref => connect(drag(ref))}>
+		<div>
 			<Typography
 				variant='p'
 				align={textAlign}
-				style={{ fontSize: fontSize }}
+				ref={ref => connect(drag(ref))}
+				sx={{
+					fontSize: fontSize,
+					outline: editable ? '2px dashed red' : 'none',
+				}}
 			>
 				{text}
 			</Typography>

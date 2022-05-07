@@ -22,6 +22,7 @@ const Button = ({
 }) => {
 	const {
 		connectors: { connect, drag },
+		editable,
 	} = useNode(state => {
 		return {
 			editable: state.events.selected,
@@ -44,6 +45,7 @@ const Button = ({
 				paddingRight: `${paddingRight}px`,
 				paddingBottom: `${paddingBottom}px`,
 				paddingLeft: `${paddingLeft}px`,
+				outline: editable ? '2px dashed red' : 'none',
 			}}
 		>
 			{text}
