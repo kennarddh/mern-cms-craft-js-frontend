@@ -5,7 +5,6 @@ const DefaultNode = {
 		props: {
 			padding: 5,
 			background: '#eeeeee',
-			'data-cy': 'root-container',
 		},
 		displayName: 'Container',
 		custom: {},
@@ -16,7 +15,7 @@ const DefaultNode = {
 	L4N8Y6GFHR: {
 		type: { resolvedName: 'Card' },
 		isCanvas: false,
-		props: { 'data-cy': 'frame-card' },
+		props: {},
 		displayName: 'Card',
 		custom: {},
 		parent: 'ROOT',
@@ -43,7 +42,7 @@ const DefaultNode = {
 	'9mDnU_fPKi': {
 		type: { resolvedName: 'Text' },
 		isCanvas: false,
-		props: { text: 'Hi world!', fontSize: 20, 'data-cy': 'frame-text' },
+		props: { text: 'Hi world!', fontSize: 20 },
 		displayName: 'Text',
 		custom: {},
 		parent: 'ROOT',
@@ -57,7 +56,6 @@ const DefaultNode = {
 		props: {
 			padding: 6,
 			background: '#999999',
-			'data-cy': 'frame-container',
 		},
 		displayName: 'Container',
 		custom: {},
@@ -73,7 +71,6 @@ const DefaultNode = {
 			text: "It's me again!",
 			fontSize: 20,
 			size: 'small',
-			'data-cy': 'frame-container-text',
 		},
 		displayName: 'Text',
 		custom: {},
@@ -85,7 +82,7 @@ const DefaultNode = {
 	ZedaLWHSNe: {
 		type: { resolvedName: 'Card' },
 		isCanvas: false,
-		props: { 'data-cy': 'frame-card' },
+		props: {},
 		displayName: 'Card',
 		custom: {},
 		parent: 'ROOT',
@@ -112,7 +109,7 @@ const DefaultNode = {
 	feQT9eiK4w: {
 		type: { resolvedName: 'Text' },
 		isCanvas: false,
-		props: { text: 'Hi world!', fontSize: 20, 'data-cy': 'frame-text' },
+		props: { text: 'Hi world!', fontSize: 20 },
 		displayName: 'Text',
 		custom: {},
 		parent: 'ROOT',
@@ -126,7 +123,6 @@ const DefaultNode = {
 		props: {
 			padding: 6,
 			background: '#999999',
-			'data-cy': 'frame-container',
 		},
 		displayName: 'Container',
 		custom: {},
@@ -142,7 +138,6 @@ const DefaultNode = {
 			text: "It's me again!",
 			fontSize: 20,
 			size: 'small',
-			'data-cy': 'frame-container-text',
 		},
 		displayName: 'Text',
 		custom: {},
