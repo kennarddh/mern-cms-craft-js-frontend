@@ -1,12 +1,25 @@
 import React from 'react'
 
-import { useNode, Element } from '@craftjs/core'
+import { useNode } from '@craftjs/core'
 
 import { Box } from '@mui/material'
 
-import InnerContainer from './InnerContainer'
+import ContainerWrapper from './ContainerWrapper'
 
-const Container = () => {
+import Settings from './Settings'
+
+const InnerContainer = ({
+	background,
+	marginTop,
+	marginRight,
+	marginBottom,
+	marginLeft,
+	paddingTop,
+	paddingRight,
+	paddingBottom,
+	paddingLeft,
+	children,
+}) => {
 	const {
 		connectors: { connect, drag },
 		editable,
@@ -20,14 +33,39 @@ const Container = () => {
 		<Box
 			ref={ref => connect(drag(ref))}
 			sx={{
+				background,
+				marginTop: `${marginTop}px`,
+				marginRight: `${marginRight}px`,
+				marginBottom: `${marginBottom}px`,
+				marginLeft: `${marginLeft}px`,
+				paddingTop: `${paddingTop}px`,
+				paddingRight: `${paddingRight}px`,
+				paddingBottom: `${paddingBottom}px`,
+				paddingLeft: `${paddingLeft}px`,
 				outline: editable ? '2px dashed red' : 'none',
 			}}
 		>
-			<Element id='InnerContainer' is={InnerContainer} canvas />
+			{children}
 		</Box>
 	)
 }
 
-export default Container
+InnerContainer.craft = {
+	props: {
+		paddingTop: 20,
+		paddingRight: 20,
+		paddingBottom: 20,
+		paddingLeft: 20,
+		marginTop: 5,
+		marginRight: 0,
+		marginBottom: 5,
+		marginLeft: 0,
+	},
+	related: {
+		settings: Settings,
+	},
+}
 
-export { InnerContainer }
+export default InnerContainer
+
+export { ContainerWrapper }

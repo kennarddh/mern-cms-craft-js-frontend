@@ -1,6 +1,6 @@
 import Button from 'Components/Editor/Nodes/Button/Button'
 import Container, {
-	InnerContainer,
+	ContainerWrapper,
 } from 'Components/Editor/Nodes/Container/Container'
 import Text from 'Components/Editor/Nodes/Text/Text'
 
@@ -13,14 +13,14 @@ const Nodes = {
 	},
 	Container: {
 		id: 'Container',
-		component: Container,
+		component: ContainerWrapper,
 		name: 'Container',
 		toolbox: true,
 	},
 	InnerContainer: {
-		id: 'InnerContainer',
-		component: InnerContainer,
-		name: 'Inner Container',
+		id: 'Container',
+		component: Container,
+		name: 'Container',
 		toolbox: false,
 	},
 	Text: {
