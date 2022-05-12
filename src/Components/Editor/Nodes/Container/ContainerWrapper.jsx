@@ -17,7 +17,7 @@ const ContainerWrapper = () => {
 
 	return (
 		<Box ref={ref => connect(drag(ref))}>
-			<Element id='InnerContainer' is={Container} canvas />
+			<Element id='Container' is={Container} canvas />
 		</Box>
 	)
 }

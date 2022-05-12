@@ -13,15 +13,15 @@ const Nodes = {
 	},
 	Container: {
 		id: 'Container',
-		component: ContainerWrapper,
-		name: 'Container',
-		toolbox: true,
-	},
-	InnerContainer: {
-		id: 'Container',
 		component: Container,
 		name: 'Container',
 		toolbox: false,
+	},
+	ContainerWrapper: {
+		id: 'ContainerWrapper',
+		component: ContainerWrapper,
+		name: 'Container',
+		toolbox: true,
 	},
 	Text: {
 		id: 'Text',
