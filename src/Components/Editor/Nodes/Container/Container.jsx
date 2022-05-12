@@ -8,7 +8,7 @@ import ContainerWrapper from './ContainerWrapper'
 
 import Settings from './Settings'
 
-const InnerContainer = ({
+const Container = ({
 	background,
 	marginTop,
 	marginRight,
@@ -50,7 +50,7 @@ const InnerContainer = ({
 	)
 }
 
-InnerContainer.craft = {
+Container.craft = {
 	props: {
 		paddingTop: 20,
 		paddingRight: 20,
@@ -66,6 +66,6 @@ InnerContainer.craft = {
 	},
 }
 
-export default InnerContainer
+export default Container
 
 export { ContainerWrapper }
