@@ -59,7 +59,7 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "npx pretty-quick --staged ng lint:fix ng test"
+			"pre-commit": "npx pretty-quick --staged ng lint:fix"
 		}
 	}
 }
