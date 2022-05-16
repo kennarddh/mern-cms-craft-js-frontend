@@ -34,12 +34,7 @@ export const SettingsPanel = () => {
 
 	return isEnabled && selected ? (
 		<Box bgcolor='rgba(0, 0, 0, 0.06)' mt={2} px={2} py={2}>
-			<Grid
-				container
-				direction='column'
-				spacing={0}
-				sx={{ marginBottom: 10 }}
-			>
+			<Grid container direction='column' spacing={0} mb={10}>
 				<Grid item>
 					<Box pb={2}>
 						<Grid container alignItems='center'>
